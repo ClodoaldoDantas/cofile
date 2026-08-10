@@ -9,9 +9,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ./src"
   },
   "dependencies": {
     "astro": "^7.2.0"
+  },
+  "devDependencies": {
+    "lefthook": "^2.1.10",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1"
   }
 }
