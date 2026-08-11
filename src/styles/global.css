@@ -1,3 +1,12 @@
+:root {
+  --color-neutral-950: #202020;
+  --color-neutral-50: #f5f5f5;
+  --color-neutral-400: #a3a3a3;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-primary: #056ee9;
+}
+
 *,
 *::before,
 *::after {
@@ -47,4 +56,16 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+/* UI Elements */
+.nav-link {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--color-black);
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--color-primary);
+  }
 }

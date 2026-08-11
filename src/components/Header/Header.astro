@@ -1,0 +1,57 @@
+---
+import logoImg from '../../assets/logo.svg'
+import menuIcon from '../../assets/menu.svg'
+import DesktopNav from './DesktopNav.astro'
+import MobileNav from './MobileNav.astro'
+---
+
+<header class="header" x-data="{ open: false }">
+  <div class="header-container">
+    <a class="header-logo" href="#">
+      <img src={logoImg.src} alt="Cofile" />
+    </a>
+
+    <button
+      class="header-menu-button"
+      aria-label="Menu"
+      @click="open = !open"
+      :aria-expanded="open"
+    >
+      <img src={menuIcon.src} alt="" />
+    </button>
+
+    <DesktopNav />
+  </div>
+
+  <MobileNav />
+</header>
+
+<style>
+  .header {
+    height: 4rem;
+
+    @media (width >= 768px) {
+      box-shadow: 0 4px 8px -2px rgb(0 0 0 / 7%);
+    }
+  }
+
+  .header-container {
+    height: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-menu-button {
+    display: none;
+
+    @media (width < 768px) {
+      display: block;
+    }
+  }
+</style>

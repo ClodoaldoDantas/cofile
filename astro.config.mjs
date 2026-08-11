@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
+import alpinejs from '@astrojs/alpinejs'
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,4 +14,6 @@ export default defineConfig({
       subsets: ['latin'],
     },
   ],
+
+  integrations: [alpinejs()],
 })

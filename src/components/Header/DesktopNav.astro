@@ -1,0 +1,36 @@
+<nav class="desktop-nav" aria-label="Desktop navigation">
+  <ul class="desktop-nav-list">
+    <li class="desktop-nav-item">
+      <a href="#" class="nav-link">Home</a>
+    </li>
+
+    <li class="desktop-nav-item">
+      <a href="#" class="nav-link">About us</a>
+    </li>
+
+    <li class="desktop-nav-item">
+      <a href="#" class="nav-link">Pricing</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .desktop-nav {
+    display: none;
+
+    @media (width >= 768px) {
+      display: block;
+    }
+  }
+
+  .desktop-nav-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .desktop-nav-item {
+    a {
+      padding: 1rem;
+    }
+  }
+</style>
