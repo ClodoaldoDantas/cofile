@@ -1,5 +1,16 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 
 // https://astro.build/config
-export default defineConfig({})
+export default defineConfig({
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: 'Epilogue',
+      cssVariable: '--font-epilogue',
+      weights: [400, 500, 600],
+      styles: ['normal'],
+      subsets: ['latin'],
+    },
+  ],
+})
