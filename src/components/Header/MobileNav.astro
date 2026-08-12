@@ -7,7 +7,7 @@ import { menu } from '@/constants/menu'
   x-show="open"
   x-transition
   @click.outside="open = false"
-  aria-label="Mobile navigation"
+  aria-label="Header navigation"
 >
   <ul class="mobile-nav-list">
     {
@@ -24,10 +24,11 @@ import { menu } from '@/constants/menu'
 
 <style>
   .mobile-nav {
+    display: none;
     width: 100%;
 
-    @media (width >= 768px) {
-      display: none;
+    @media (width < 768px) {
+      display: block;
     }
   }
 

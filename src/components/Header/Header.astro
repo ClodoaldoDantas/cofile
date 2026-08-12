@@ -1,14 +1,14 @@
 ---
-import logoImg from '@/assets/logo.svg'
-import menuIcon from '@/assets/menu.svg'
+import Logo from '@/components/Logo.astro'
 import DesktopNav from './DesktopNav.astro'
 import MobileNav from './MobileNav.astro'
+import menuIcon from '@/assets/menu.svg'
 ---
 
 <header class="header" x-data="{ open: false }">
   <div class="header-container">
-    <a class="header-logo" href="#">
-      <img src={logoImg.src} alt="Cofile" />
+    <a class="header-logo" href="/">
+      <Logo />
     </a>
 
     <button

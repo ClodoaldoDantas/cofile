@@ -2,7 +2,7 @@
 import { menu } from '@/constants/menu'
 ---
 
-<nav class="desktop-nav" aria-label="Desktop navigation">
+<nav class="desktop-nav" aria-label="Header navigation">
   <ul class="desktop-nav-list">
     {
       menu.map((menuItem) => (
@@ -18,10 +18,10 @@ import { menu } from '@/constants/menu'
 
 <style>
   .desktop-nav {
-    display: none;
+    display: block;
 
-    @media (width >= 768px) {
-      display: block;
+    @media (width < 768px) {
+      display: none;
     }
   }
 

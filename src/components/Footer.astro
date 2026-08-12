@@ -1,0 +1,90 @@
+---
+import Logo from '@/components/Logo.astro'
+
+import { menu } from '@/constants/menu'
+import { socialMedia } from '@/constants/social-media'
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-row">
+      <a class="footer-logo" href="/">
+        <Logo />
+      </a>
+
+      <nav class="footer-social-nav" aria-label="Social navigation">
+        <ul class="footer-social-nav-list">
+          {
+            socialMedia.map((socialItem) => (
+              <li class="footer-social-nav-item">
+                <a href={socialItem.href} class="footer-social-link">
+                  <img src={socialItem.icon.src} alt={socialItem.name} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <ul class="footer-nav-list">
+        {
+          menu.map((menuItem) => (
+            <li class="footer-nav-item">
+              <a href={menuItem.href} class="nav-link">
+                {menuItem.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <p class="footer-copyright">Design by Masbobz Works</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding-block: 4rem;
+    background-color: var(--color-neutral-50);
+
+    @media (width < 768px) {
+      padding-block: 3rem;
+    }
+  }
+
+  .footer-container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (width < 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+  }
+
+  .footer-social-nav-list,
+  .footer-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.875rem;
+  }
+</style>

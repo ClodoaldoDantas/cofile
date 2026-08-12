@@ -24,6 +24,10 @@ body {
   font-family: var(--font-epilogue), system-ui, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 img,
@@ -56,6 +60,10 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+main {
+  flex: 1;
 }
 
 /* UI Elements */
