@@ -1,3 +1,7 @@
+---
+import { menu } from '@/constants/menu'
+---
+
 <nav
   class="mobile-nav"
   x-show="open"
@@ -6,17 +10,15 @@
   aria-label="Mobile navigation"
 >
   <ul class="mobile-nav-list">
-    <li class="mobile-nav-item">
-      <a href="#" class="nav-link">Home</a>
-    </li>
-
-    <li class="mobile-nav-item">
-      <a href="#" class="nav-link">About us</a>
-    </li>
-
-    <li class="mobile-nav-item">
-      <a href="#" class="nav-link">Pricing</a>
-    </li>
+    {
+      menu.map((menuItem) => (
+        <li class="mobile-nav-item">
+          <a href={menuItem.href} class="nav-link">
+            {menuItem.label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
 

@@ -1,16 +1,18 @@
+---
+import { menu } from '@/constants/menu'
+---
+
 <nav class="desktop-nav" aria-label="Desktop navigation">
   <ul class="desktop-nav-list">
-    <li class="desktop-nav-item">
-      <a href="#" class="nav-link">Home</a>
-    </li>
-
-    <li class="desktop-nav-item">
-      <a href="#" class="nav-link">About us</a>
-    </li>
-
-    <li class="desktop-nav-item">
-      <a href="#" class="nav-link">Pricing</a>
-    </li>
+    {
+      menu.map((menuItem) => (
+        <li class="desktop-nav-item">
+          <a href={menuItem.href} class="nav-link">
+            {menuItem.label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
 
