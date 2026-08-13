@@ -1,5 +1,6 @@
 ---
 import { menu } from '@/constants/menu'
+import Button from '@/components/Button.astro'
 ---
 
 <nav class="desktop-nav" aria-label="Header navigation">
@@ -13,6 +14,10 @@ import { menu } from '@/constants/menu'
         </li>
       ))
     }
+
+    <li>
+      <Button>Download</Button>
+    </li>
   </ul>
 </nav>
 
@@ -28,6 +33,10 @@ import { menu } from '@/constants/menu'
   .desktop-nav-list {
     display: flex;
     align-items: center;
+
+    li:last-child {
+      margin-left: 0.5rem;
+    }
   }
 
   .desktop-nav-item {
