@@ -25,10 +25,15 @@ import { menu } from '@/constants/menu'
 <style>
   .mobile-nav {
     display: none;
-    width: 100%;
 
     @media (width < 768px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
       display: block;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 8px -2px rgb(0 0 0 / 7%);
     }
   }
 
@@ -41,7 +46,7 @@ import { menu } from '@/constants/menu'
 
     a {
       width: 100%;
-      padding: 1rem 1.25rem;
+      padding: 0.875rem 1.25rem;
     }
   }
 </style>
