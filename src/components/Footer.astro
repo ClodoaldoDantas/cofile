@@ -1,4 +1,5 @@
 ---
+import Container from '@/components/Container.astro'
 import Logo from '@/components/Logo.astro'
 
 import { menu } from '@/constants/menu'
@@ -6,7 +7,7 @@ import { socialMedia } from '@/constants/social-media'
 ---
 
 <footer class="footer">
-  <div class="footer-container">
+  <Container size="xl" class="footer-container">
     <div class="footer-row">
       <a class="footer-logo" href="/">
         <Logo />
@@ -42,7 +43,7 @@ import { socialMedia } from '@/constants/social-media'
     </nav>
 
     <p class="footer-copyright">Design by Masbobz Works</p>
-  </div>
+  </Container>
 </footer>
 
 <style>
@@ -56,10 +57,6 @@ import { socialMedia } from '@/constants/social-media'
   }
 
   .footer-container {
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-
     display: flex;
     flex-direction: column;
     gap: 2.5rem;

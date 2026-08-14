@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'div'> & {
+  size?: 'md' | 'xl'
+}
+
+const { class: className, size = 'md', ...attrs } = Astro.props
+---
+
+<div class:list={[`container-${size}`, className]} {...attrs}>
+  <slot />
+</div>
+
+<style>
+  .container-md,
+  .container-xl {
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .container-md {
+    width: min(100%, 58.75rem);
+  }
+
+  .container-xl {
+    width: min(100%, 90rem);
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import Container from '@/components/Container.astro'
 import Logo from '@/components/Logo.astro'
 import DesktopNav from './DesktopNav.astro'
 import MobileNav from './MobileNav.astro'
@@ -6,7 +7,7 @@ import menuIcon from '@/assets/menu.svg'
 ---
 
 <header class="header" x-data="{ open: false }">
-  <div class="header-container">
+  <Container size="xl" class="header-container">
     <a class="header-logo" href="/">
       <Logo />
     </a>
@@ -21,7 +22,7 @@ import menuIcon from '@/assets/menu.svg'
     </button>
 
     <DesktopNav />
-  </div>
+  </Container>
 
   <MobileNav />
 </header>
@@ -39,10 +40,6 @@ import menuIcon from '@/assets/menu.svg'
 
   .header-container {
     height: 100%;
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
