@@ -1,8 +1,27 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import HeroBanner from '@/partials/HeroBanner.astro'
+import Section from '@/components/Section.astro'
+
+import heroMobile from '@/assets/hero-mobile.png'
+import heroDesktop from '@/assets/hero-desktop.png'
 ---
 
 <Layout title="Cofile" description="Check currency exchange rate in real time">
-  <HeroBanner />
+  <Section
+    class="hero"
+    titleTag="h1"
+    title="Check Currency Exchange Rate in Real Time"
+    description="Monitor your worldwide business with this handy apps"
+    image={{
+      mobile: heroMobile.src,
+      desktop: heroDesktop.src,
+      alt: 'Mobile device showing app with currency exchange rate information',
+    }}
+  />
 </Layout>
+
+<style>
+  .hero {
+    padding-top: 3rem;
+  }
+</style>

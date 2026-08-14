@@ -1,0 +1,84 @@
+---
+import Container from '@/components/Container.astro'
+import type { HTMLAttributes } from 'astro/types'
+
+export interface Props extends HTMLAttributes<'section'> {
+  title: string
+  titleTag?: 'h1' | 'h2'
+  description: string
+  image: {
+    mobile: string
+    desktop: string
+    alt: string
+  }
+}
+
+const {
+  title,
+  titleTag = 'h2',
+  description,
+  image,
+  class: className,
+  ...rest
+} = Astro.props
+---
+
+<section class:list={['section', className]} {...rest}>
+  <Container class="section-container">
+    <div class="section-content">
+      {
+        titleTag === 'h1' ? (
+          <h1 class="heading-lg">{title}</h1>
+        ) : (
+          <h2 class="heading-md">{title}</h2>
+        )
+      }
+
+      <p class="text">{description}</p>
+    </div>
+
+    <picture class="section-image">
+      <source media="(min-width: 768px)" srcset={image.desktop} />
+      <img src={image.mobile} alt={image.alt} />
+    </picture>
+  </Container>
+</section>
+
+<style>
+  .section {
+    padding-bottom: 6rem;
+  }
+
+  .section-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+
+    @media (width < 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .heading-md,
+  .heading-lg,
+  .text {
+    max-width: 18.75rem;
+
+    @media (width < 768px) {
+      max-width: 100%;
+    }
+  }
+
+  .heading-md {
+    margin-bottom: 1rem;
+  }
+
+  .heading-lg {
+    margin-bottom: 0.5rem;
+  }
+
+  .section-image {
+    flex-shrink: 0;
+  }
+</style>
