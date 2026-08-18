@@ -1,10 +1,11 @@
 ---
 import Container from '@/components/Container.astro'
+import Heading from '@/components/Heading.astro'
 import type { HTMLAttributes } from 'astro/types'
 
 export interface Props extends HTMLAttributes<'section'> {
   title: string
-  titleTag?: 'h1' | 'h2'
+  titleLevel?: 1 | 2
   description: string
   image: {
     mobile: string
@@ -15,7 +16,7 @@ export interface Props extends HTMLAttributes<'section'> {
 
 const {
   title,
-  titleTag = 'h2',
+  titleLevel = 2,
   description,
   image,
   class: className,
@@ -26,14 +27,7 @@ const {
 <section class:list={['section', className]} {...rest}>
   <Container class="section-container">
     <div class="section-content">
-      {
-        titleTag === 'h1' ? (
-          <h1 class="heading-lg">{title}</h1>
-        ) : (
-          <h2 class="heading-md">{title}</h2>
-        )
-      }
-
+      <Heading title={title} level={titleLevel} />
       <p class="text">{description}</p>
     </div>
 
@@ -60,22 +54,15 @@ const {
     }
   }
 
-  .heading-md,
-  .heading-lg,
-  .text {
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     max-width: 18.75rem;
 
     @media (width < 768px) {
       max-width: 100%;
     }
-  }
-
-  .heading-md {
-    margin-bottom: 1rem;
-  }
-
-  .heading-lg {
-    margin-bottom: 0.5rem;
   }
 
   .section-image {

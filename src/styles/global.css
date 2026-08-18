@@ -68,21 +68,6 @@ main {
 }
 
 /* Typography */
-.heading-md,
-.heading-lg {
-  font-weight: 700;
-  color: var(--color-neutral-950);
-  line-height: 1.3;
-}
-
-.heading-md {
-  font-size: 1.75rem;
-}
-
-.heading-lg {
-  font-size: 2.25rem;
-}
-
 .text {
   font-size: 1rem;
   color: var(--color-neutral-400);
