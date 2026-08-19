@@ -1,6 +1,8 @@
 ---
 import Container from '@/components/Container.astro'
 import Heading from '@/components/Heading.astro'
+import Picture from '@/components/Picture.astro'
+import Text from '@/components/Text.astro'
 import type { HTMLAttributes } from 'astro/types'
 
 export interface Props extends HTMLAttributes<'section'> {
@@ -28,13 +30,15 @@ const {
   <Container class="section-container">
     <div class="section-content">
       <Heading title={title} level={titleLevel} />
-      <p class="text">{description}</p>
+      <Text text={description} />
     </div>
 
-    <picture class="section-image">
-      <source media="(min-width: 768px)" srcset={image.desktop} />
-      <img src={image.mobile} alt={image.alt} />
-    </picture>
+    <Picture
+      class="section-image"
+      mobile={image.mobile}
+      desktop={image.desktop}
+      alt={image.alt}
+    />
   </Container>
 </section>
 

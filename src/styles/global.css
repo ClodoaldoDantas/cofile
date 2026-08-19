@@ -67,12 +67,6 @@ main {
   flex: 1;
 }
 
-/* Typography */
-.text {
-  font-size: 1rem;
-  color: var(--color-neutral-400);
-}
-
 /* UI Elements */
 .nav-link {
   display: inline-block;
