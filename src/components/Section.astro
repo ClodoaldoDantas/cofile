@@ -3,6 +3,7 @@ import Container from '@/components/Container.astro'
 import Heading from '@/components/Heading.astro'
 import Picture from '@/components/Picture.astro'
 import Text from '@/components/Text.astro'
+import StoreBadges from '@/components/StoreBadges.astro'
 import type { HTMLAttributes } from 'astro/types'
 
 export interface Props extends HTMLAttributes<'section'> {
@@ -14,6 +15,7 @@ export interface Props extends HTMLAttributes<'section'> {
     desktop: string
     alt: string
   }
+  showStoreBadges?: boolean
 }
 
 const {
@@ -21,6 +23,7 @@ const {
   titleLevel = 2,
   description,
   image,
+  showStoreBadges = false,
   class: className,
   ...rest
 } = Astro.props
@@ -31,6 +34,14 @@ const {
     <div class="section-content">
       <Heading title={title} level={titleLevel} />
       <Text text={description} />
+
+      {
+        showStoreBadges && (
+          <div class="store-badges-container">
+            <StoreBadges />
+          </div>
+        )
+      }
     </div>
 
     <Picture
@@ -71,5 +82,9 @@ const {
 
   .section-image {
     flex-shrink: 0;
+  }
+
+  .store-badges-container {
+    margin-top: 2.5rem;
   }
 </style>
