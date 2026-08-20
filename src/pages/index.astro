@@ -4,6 +4,9 @@ import Section from '@/components/Section.astro'
 
 import heroMobile from '@/assets/hero-mobile.png'
 import heroDesktop from '@/assets/hero-desktop.png'
+
+import section3Mobile from '@/assets/section-3-mobile.png'
+import section3Desktop from '@/assets/section-3-desktop.png'
 ---
 
 <Layout title="Cofile" description="Check currency exchange rate in real time">
@@ -16,6 +19,16 @@ import heroDesktop from '@/assets/hero-desktop.png'
     image={{
       mobile: heroMobile.src,
       desktop: heroDesktop.src,
+      alt: 'Mobile device showing app with currency exchange rate information',
+    }}
+  />
+
+  <Section
+    title="Easy to Use"
+    description="Our clean and intuitive design will help you operate the apps easily"
+    image={{
+      mobile: section3Mobile.src,
+      desktop: section3Desktop.src,
       alt: 'Mobile device showing app with currency exchange rate information',
     }}
   />
