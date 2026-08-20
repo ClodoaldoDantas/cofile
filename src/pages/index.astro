@@ -7,6 +7,12 @@ import heroDesktop from '@/assets/hero-desktop.png'
 
 import section3Mobile from '@/assets/section-3-mobile.png'
 import section3Desktop from '@/assets/section-3-desktop.png'
+
+import section4Mobile from '@/assets/section-4-mobile.png'
+import section4Desktop from '@/assets/section-4-desktop.png'
+
+import section8Mobile from '@/assets/section-8-mobile.png'
+import section8Desktop from '@/assets/section-8-desktop.png'
 ---
 
 <Layout title="Cofile" description="Check currency exchange rate in real time">
@@ -15,12 +21,12 @@ import section3Desktop from '@/assets/section-3-desktop.png'
     title="Check Currency Exchange Rate in Real Time"
     titleLevel={1}
     description="Monitor your worldwide business with this handy apps"
-    showStoreBadges
     image={{
       mobile: heroMobile.src,
       desktop: heroDesktop.src,
       alt: 'Mobile device showing app with currency exchange rate information',
     }}
+    showStoreBadges
   />
 
   <Section
@@ -31,6 +37,28 @@ import section3Desktop from '@/assets/section-3-desktop.png'
       desktop: section3Desktop.src,
       alt: 'Mobile device showing app with currency exchange rate information',
     }}
+  />
+
+  <Section
+    title="Upgrade When You Need"
+    description="We committed to provide the free plan forever. Once you need an upgrade, we will be there for you"
+    image={{
+      mobile: section4Mobile.src,
+      desktop: section4Desktop.src,
+      alt: 'Mobile device showing app with currency exchange rate information',
+    }}
+    inverted
+  />
+
+  <Section
+    title="Get it Now"
+    description="Monitor your worldwide business with this handy apps"
+    image={{
+      mobile: section8Mobile.src,
+      desktop: section8Desktop.src,
+      alt: 'Mobile device showing app with currency exchange rate information',
+    }}
+    showStoreBadges
   />
 </Layout>
 

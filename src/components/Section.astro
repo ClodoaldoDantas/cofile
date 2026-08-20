@@ -16,6 +16,7 @@ export interface Props extends HTMLAttributes<'section'> {
     alt: string
   }
   showStoreBadges?: boolean
+  inverted?: boolean
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   description,
   image,
   showStoreBadges = false,
+  inverted = false,
   class: className,
   ...rest
 } = Astro.props
@@ -31,7 +33,12 @@ const {
 
 <section class:list={['section', className]} {...rest}>
   <Container class="section-container">
-    <div class="section-content">
+    <div
+      class:list={[
+        'section-content',
+        { 'section-content--inverted': inverted },
+      ]}
+    >
       <Heading title={title} level={titleLevel} />
       <Text text={description} />
 
@@ -78,6 +85,10 @@ const {
     @media (width < 768px) {
       max-width: 100%;
     }
+  }
+
+  .section-content--inverted {
+    order: 1;
   }
 
   .section-image {
