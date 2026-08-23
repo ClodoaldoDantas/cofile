@@ -51,12 +51,9 @@ const {
       }
     </div>
 
-    <Picture
-      class="section-image"
-      mobile={image.mobile}
-      desktop={image.desktop}
-      alt={image.alt}
-    />
+    <div class="section-banner">
+      <Picture mobile={image.mobile} desktop={image.desktop} alt={image.alt} />
+    </div>
   </Container>
 </section>
 
@@ -91,7 +88,7 @@ const {
     order: 1;
   }
 
-  .section-image {
+  .section-banner {
     flex-shrink: 0;
   }
 
