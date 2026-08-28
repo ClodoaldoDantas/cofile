@@ -1,0 +1,30 @@
+---
+export interface Props {
+  inverted?: boolean
+}
+
+const { inverted = false } = Astro.props
+---
+
+<div
+  class:list={['section-content', { 'section-content--inverted': inverted }]}
+>
+  <slot />
+</div>
+
+<style>
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 18.75rem;
+
+    @media (width < 768px) {
+      max-width: 100%;
+    }
+  }
+
+  .section-content--inverted {
+    order: 1;
+  }
+</style>

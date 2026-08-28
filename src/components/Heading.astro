@@ -1,10 +1,10 @@
 ---
 export interface Props {
   title: string
-  level: 1 | 2
+  level?: 1 | 2
 }
 
-const { title, level } = Astro.props
+const { title, level = 2 } = Astro.props
 ---
 
 {
