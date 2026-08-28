@@ -1,8 +1,8 @@
 ---
-import Container from '@/components/Container.astro'
+import Container from '@/components/ui/Container.astro'
 import Logo from '@/components/Logo.astro'
-import DesktopNav from './DesktopNav.astro'
-import MobileNav from './MobileNav.astro'
+import HeaderMobileMenu from './HeaderMobileMenu.astro'
+import HeaderDesktopMenu from './HeaderDesktopMenu.astro'
 import menuIcon from '@/assets/menu.svg'
 ---
 
@@ -21,10 +21,10 @@ import menuIcon from '@/assets/menu.svg'
       <img src={menuIcon.src} alt="" />
     </button>
 
-    <DesktopNav />
+    <HeaderDesktopMenu />
   </Container>
 
-  <MobileNav />
+  <HeaderMobileMenu />
 </header>
 
 <style>
