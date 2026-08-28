@@ -1,0 +1,37 @@
+---
+import Container from '@/components/ui/Container.astro'
+import Heading from '@/components/ui/Heading.astro'
+
+import papleImg from '@/assets/paple.svg'
+import masbobzImg from '@/assets/masbobz-works.svg'
+import notionImg from '@/assets/notion.svg'
+import superImg from '@/assets/super.svg'
+---
+
+<section class="partners">
+  <Container>
+    <Heading title="Trusted by" level={3} />
+
+    <div class="grid">
+      <img src={papleImg.src} alt="Paple" />
+      <img src={masbobzImg.src} alt="Masbobz Works" />
+      <img src={notionImg.src} alt="Notion" />
+      <img src={superImg.src} alt="Super" />
+    </div>
+  </Container>
+</section>
+
+<style>
+  .partners {
+    padding-bottom: 6rem;
+  }
+
+  .grid {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+</style>

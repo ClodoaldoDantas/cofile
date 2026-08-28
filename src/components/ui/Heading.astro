@@ -1,26 +1,32 @@
 ---
 export interface Props {
   title: string
-  level?: 1 | 2
+  level?: 1 | 2 | 3
 }
 
 const { title, level = 2 } = Astro.props
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3'
+
+const sizeClass = {
+  1: 'heading-lg',
+  2: 'heading-md',
+  3: 'heading-sm',
+}[level]
 ---
 
-{
-  level === 1 ? (
-    <h1 class="heading-lg">{title}</h1>
-  ) : (
-    <h2 class="heading-md">{title}</h2>
-  )
-}
+<Tag class={sizeClass}>{title}</Tag>
 
 <style>
+  .heading-sm,
   .heading-md,
   .heading-lg {
     font-weight: 700;
     color: var(--color-neutral-950);
     line-height: 1.3;
+  }
+
+  .heading-sm {
+    font-size: 1.5rem;
   }
 
   .heading-md {
