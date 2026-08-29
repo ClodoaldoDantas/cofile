@@ -17,6 +17,8 @@ import section4Mobile from '@/assets/section-4-mobile.png'
 import section4Desktop from '@/assets/section-4-desktop.png'
 import section8Mobile from '@/assets/section-8-mobile.png'
 import section8Desktop from '@/assets/section-8-desktop.png'
+
+import { partners } from '@/constants/partners'
 ---
 
 <Layout title="Cofile" description="Check currency exchange rate in real time">
@@ -39,7 +41,7 @@ import section8Desktop from '@/assets/section-8-desktop.png'
     </SectionBanner>
   </Section>
 
-  <Partners />
+  <Partners images={partners} />
 
   <Section>
     <SectionContent>
