@@ -4,6 +4,17 @@ import Logo from '@/components/Logo.astro'
 import HeaderMobileMenu from './HeaderMobileMenu.astro'
 import HeaderDesktopMenu from './HeaderDesktopMenu.astro'
 import menuIcon from '@/assets/menu.svg'
+
+export type MenuItem = {
+  label: string
+  href: string
+}
+
+interface Props {
+  menu: MenuItem[]
+}
+
+const { menu } = Astro.props
 ---
 
 <header class="header" x-data="{ open: false }">
@@ -21,10 +32,10 @@ import menuIcon from '@/assets/menu.svg'
       <img src={menuIcon.src} alt="" />
     </button>
 
-    <HeaderDesktopMenu />
+    <HeaderDesktopMenu items={menu} />
   </Container>
 
-  <HeaderMobileMenu />
+  <HeaderMobileMenu items={menu} />
 </header>
 
 <style>

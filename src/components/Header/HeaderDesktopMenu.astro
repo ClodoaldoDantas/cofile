@@ -1,12 +1,18 @@
 ---
-import { menu } from '@/constants/menu'
 import Button from '@/components/ui/Button.astro'
+import type { MenuItem } from './Header.astro'
+
+interface Props {
+  items: MenuItem[]
+}
+
+const { items } = Astro.props
 ---
 
 <nav class="desktop-nav" aria-label="Header navigation">
   <ul class="desktop-nav-list">
     {
-      menu.map((menuItem) => (
+      items.map((menuItem) => (
         <li class="desktop-nav-item">
           <a href={menuItem.href} class="nav-link">
             {menuItem.label}

@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'astro/types'
 import Container from '@/components/ui/Container.astro'
 
-export interface Props extends HTMLAttributes<'section'> {}
+interface Props extends HTMLAttributes<'section'> {}
 
 const { class: className, ...rest } = Astro.props
 ---

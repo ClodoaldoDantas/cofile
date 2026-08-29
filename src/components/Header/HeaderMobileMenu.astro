@@ -1,5 +1,11 @@
 ---
-import { menu } from '@/constants/menu'
+import type { MenuItem } from './Header.astro'
+
+interface Props {
+  items: MenuItem[]
+}
+
+const { items } = Astro.props
 ---
 
 <nav
@@ -11,7 +17,7 @@ import { menu } from '@/constants/menu'
 >
   <ul class="mobile-nav-list">
     {
-      menu.map((menuItem) => (
+      items.map((menuItem) => (
         <li class="mobile-nav-item">
           <a href={menuItem.href} class="nav-link">
             {menuItem.label}
