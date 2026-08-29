@@ -1,11 +1,6 @@
-import instagramIcon from '@/assets/instagram.svg'
-import twitterIcon from '@/assets/twitter.svg'
-import dribbbleIcon from '@/assets/dribbble.svg'
-import mediumIcon from '@/assets/medium.svg'
-
 export const socialMedia = [
-  { name: 'Instagram', href: '/', icon: instagramIcon },
-  { name: 'Twitter', href: '/', icon: twitterIcon },
-  { name: 'Dribbble', href: '/', icon: dribbbleIcon },
-  { name: 'Medium', href: '/', icon: mediumIcon },
+  { name: 'Instagram', href: '/', icon: 'ph:instagram-logo' },
+  { name: 'Facebook', href: '/', icon: 'ph:facebook-logo' },
+  { name: 'Dribbble', href: '/', icon: 'ph:dribbble-logo' },
+  { name: 'Twitter', href: '/', icon: 'ph:twitter-logo' },
 ]

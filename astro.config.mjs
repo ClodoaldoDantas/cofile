@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
 import alpinejs from '@astrojs/alpinejs'
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,5 +16,5 @@ export default defineConfig({
     },
   ],
 
-  integrations: [alpinejs()],
+  integrations: [alpinejs(), icon()],
 })

@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
+    "@iconify-json/ph": "^1.2.2",
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.16.0",
-    "astro": "^7.2.0"
+    "astro": "^7.2.0",
+    "astro-icon": "^1.2.0"
   },
   "devDependencies": {
     "lefthook": "^2.1.10",

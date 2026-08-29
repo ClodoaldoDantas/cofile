@@ -1,14 +1,17 @@
 ---
 import '@/styles/global.css'
 import { Font } from 'astro:assets'
+
 import Header from '@/components/header/Header.astro'
 import Footer from '@/components/Footer.astro'
 import { menu } from '@/constants/menu'
+import { socialMedia } from '@/constants/social-media'
 
 interface Props {
   title: string
   description: string
 }
+
 const { title, description } = Astro.props
 ---
 
@@ -27,6 +30,10 @@ const { title, description } = Astro.props
       <slot />
     </main>
 
-    <Footer />
+    <Footer
+      menu={menu}
+      socialMedia={socialMedia}
+      copyright="Design by Masbobz Works"
+    />
   </body>
 </html>

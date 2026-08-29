@@ -4,11 +4,7 @@ import Logo from '@/components/Logo.astro'
 import HeaderMobileMenu from './HeaderMobileMenu.astro'
 import HeaderDesktopMenu from './HeaderDesktopMenu.astro'
 import menuIcon from '@/assets/menu.svg'
-
-export type MenuItem = {
-  label: string
-  href: string
-}
+import type { MenuItem } from '@/types/menu-item'
 
 interface Props {
   menu: MenuItem[]

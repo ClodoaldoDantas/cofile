@@ -2,8 +2,22 @@
 import Container from '@/components/ui/Container.astro'
 import Logo from '@/components/Logo.astro'
 
-import { menu } from '@/constants/menu'
-import { socialMedia } from '@/constants/social-media'
+import { Icon } from 'astro-icon/components'
+import type { MenuItem } from '@/types/menu-item'
+
+type SocialLink = {
+  name: string
+  href: string
+  icon: string
+}
+
+interface Props {
+  menu: MenuItem[]
+  socialMedia: SocialLink[]
+  copyright: string
+}
+
+const { menu, socialMedia, copyright } = Astro.props
 ---
 
 <footer class="footer">
@@ -18,8 +32,12 @@ import { socialMedia } from '@/constants/social-media'
           {
             socialMedia.map((socialItem) => (
               <li class="footer-social-nav-item">
-                <a href={socialItem.href} class="footer-social-link">
-                  <img src={socialItem.icon.src} alt={socialItem.name} />
+                <a
+                  href={socialItem.href}
+                  class="footer-social-link"
+                  aria-label={socialItem.name}
+                >
+                  <Icon name={socialItem.icon} size={28} aria-hidden="true" />
                 </a>
               </li>
             ))
@@ -42,7 +60,7 @@ import { socialMedia } from '@/constants/social-media'
       </ul>
     </nav>
 
-    <p class="footer-copyright">Design by Masbobz Works</p>
+    <p class="footer-copyright">{copyright}</p>
   </Container>
 </footer>
 
@@ -83,5 +101,13 @@ import { socialMedia } from '@/constants/social-media'
 
   .footer-copyright {
     font-size: 0.875rem;
+  }
+
+  .footer-social-link {
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--color-primary);
+    }
   }
 </style>
