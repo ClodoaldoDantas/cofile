@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components'
+import Heading from '@/components/ui/Heading.astro'
+import Text from '@/components/ui/Text.astro'
+
+interface Props {
+  icon: string
+  title: string
+  description: string
+}
+
+const { icon, title, description } = Astro.props
+---
+
+<div class="info-card">
+  <Icon name={icon} size={48} aria-hidden="true" />
+  <Heading title={title} level={3} />
+  <Text text={description} />
+</div>
+
+<style>
+  .info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .info-card > svg {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+</style>

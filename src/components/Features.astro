@@ -1,0 +1,41 @@
+---
+import Container from '@/components/ui/Container.astro'
+import InfoCard from '@/components/InfoCard.astro'
+
+interface Props {
+  features: {
+    icon: string
+    title: string
+    description: string
+  }[]
+}
+
+const { features } = Astro.props
+---
+
+<section class="features">
+  <Container class="features-container">
+    {
+      features.map((feature) => (
+        <InfoCard
+          icon={feature.icon}
+          title={feature.title}
+          description={feature.description}
+        />
+      ))
+    }
+  </Container>
+</section>
+
+<style>
+  .features {
+    padding-bottom: 6rem;
+  }
+
+  .features-container {
+    margin-block: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16.875rem, 1fr));
+    gap: 2.5rem;
+  }
+</style>
