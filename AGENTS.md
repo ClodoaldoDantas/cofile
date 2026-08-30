@@ -40,7 +40,7 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 ---
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/Header/Header.astro'
-import { menu } from '@/constants/menu'
+import { menu } from '@/data/menu'
 ---
 ```
 
