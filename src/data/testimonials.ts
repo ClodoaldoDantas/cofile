@@ -1,0 +1,20 @@
+export const testimonials = [
+  {
+    quote:
+      'Really happy with the product and kind services provided by Cofile. Will recommend it to the world!',
+    author: {
+      image: 'https://picsum.photos/id/338/200/200',
+      name: 'Ashley Rock',
+      role: 'Founder of Paple',
+    },
+  },
+  {
+    quote:
+      'Top class product and services! Since my first sign up, they helped my team a lot.!',
+    author: {
+      image: 'https://picsum.photos/id/786/200/200',
+      name: 'Natalie Bloom',
+      role: 'Marketing of Simpage',
+    },
+  },
+]

@@ -1,0 +1,33 @@
+---
+import Container from '@/components/ui/Container.astro'
+import Testimony, { type ITestimony } from './Testimony.astro'
+
+interface Props {
+  testimonials: ITestimony[]
+}
+
+const { testimonials } = Astro.props
+---
+
+<section class="testimonials">
+  <Container class="testimonials-container">
+    {testimonials.map((testimony) => <Testimony data={testimony} />)}
+  </Container>
+</section>
+
+<style>
+  .testimonials {
+    padding-bottom: 6rem;
+  }
+
+  .testimonials-container {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    @media (width < 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

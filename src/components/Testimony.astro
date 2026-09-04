@@ -1,0 +1,87 @@
+---
+import Text from '@/components/ui/Text.astro'
+
+export type ITestimony = {
+  quote: string
+  author: {
+    image: string
+    name: string
+    role: string
+  }
+}
+
+interface Props {
+  data: ITestimony
+}
+
+const { data } = Astro.props
+---
+
+<div class="testimony">
+  <img
+    src={data.author.image}
+    alt={`Photo of ${data.author.name}`}
+    class="testimony-image"
+  />
+
+  <div class="testimony-content">
+    <span class="quotation-marks">“ ”</span>
+    <blockquote class="testimony-quote">
+      <Text text={data.quote} />
+    </blockquote>
+
+    <div class="testimony-author">
+      <Text class="author-name" text={data.author.name} />
+      <Text text={data.author.role} />
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimony {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    @media (width < 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .testimony-image {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .testimony-content {
+    flex: 1;
+  }
+
+  .quotation-marks {
+    font-size: 2.25rem;
+    color: var(--color-primary);
+  }
+
+  .testimony-quote > p {
+    font-weight: 600;
+    color: var(--color-neutral-950);
+  }
+
+  .testimony-author {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-neutral-300);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .author-name {
+      color: var(--color-neutral-950);
+    }
+  }
+</style>
