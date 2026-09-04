@@ -39,7 +39,7 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 ```astro
 ---
 import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/Header/Header.astro'
+import Header from '@/components/header/Header.astro'
 import { menu } from '@/data/menu'
 ---
 ```
@@ -92,10 +92,12 @@ body {
 
 Alpine.js is enabled globally by the `@astrojs/alpinejs` integration. It is used sparingly for interactive UI:
 
-- `src/components/Header/Header.astro` controls the mobile menu open state with `x-data`, `@click`, and `:aria-expanded`.
-- `src/components/Header/MobileNav.astro` shows/hides with `x-show`, `x-transition`, and `@click.outside`.
+- `src/components/header/Header.astro` controls the mobile menu open state with `x-data`, `@click`, and `:aria-expanded`.
+- `src/components/header/HeaderMobileMenu.astro` shows/hides with `x-show`, `x-transition`, and `@click.outside`.
 
 Keep Alpine directives in Astro component markup when adding small interactions.
+
+Prefer native HTML elements for simple disclosures when possible. For example, the accordion in `src/components/ui/Accordion.astro` uses `<details>` and `<summary>` instead of Alpine.js.
 
 ## Images
 
