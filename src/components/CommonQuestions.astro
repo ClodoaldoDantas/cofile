@@ -1,0 +1,66 @@
+---
+import { Icon } from 'astro-icon/components'
+import Container from '@/components/ui/Container.astro'
+import Heading from '@/components/ui/Heading.astro'
+import Accordion from '@/components/ui/Accordion.astro'
+
+interface Props {
+  items: {
+    title: string
+    content: string
+  }[]
+}
+
+const { items } = Astro.props
+---
+
+<section class="common-questions">
+  <Container class="common-questions-container">
+    <div class="common-questions-header">
+      <Icon name="ph:seal-question" size={48} aria-hidden="true" />
+      <Heading title="Frequently Asked Questions" />
+    </div>
+
+    <div class="common-questions-list">
+      <Accordion items={items} />
+    </div>
+  </Container>
+</section>
+
+<style>
+  .common-questions {
+    padding-bottom: 6rem;
+  }
+
+  .common-questions-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+
+    @media (width < 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .common-questions-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 20rem;
+    flex-shrink: 0;
+
+    @media (width < 768px) {
+      max-width: 100%;
+    }
+  }
+
+  .common-questions-header > svg {
+    color: var(--color-primary);
+  }
+
+  .common-questions-list {
+    width: 100%;
+  }
+</style>

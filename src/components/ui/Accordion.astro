@@ -1,0 +1,79 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  items: {
+    title: string
+    content: string
+  }[]
+}
+
+const { items } = Astro.props
+---
+
+<div class="accordion">
+  {
+    items.map((item) => (
+      <details class="accordion-item">
+        <summary class="accordion-trigger">
+          <Icon name="ph:caret-right" size={20} aria-hidden="true" />
+          <span>{item.title}</span>
+        </summary>
+
+        <div class="accordion-content">
+          <p>{item.content}</p>
+        </div>
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .accordion-item:not(:last-child) {
+      border-bottom: 1px solid var(--color-neutral-300);
+    }
+  }
+
+  .accordion-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1.25rem 0;
+
+    list-style: none;
+    cursor: pointer;
+
+    span {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-neutral-950);
+      text-align: left;
+    }
+  }
+
+  .accordion-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-trigger > svg {
+    color: var(--color-neutral-950);
+    flex-shrink: 0;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .accordion-item[open] .accordion-trigger > svg {
+    transform: rotate(90deg);
+  }
+
+  .accordion-content {
+    padding-bottom: 1.25rem;
+    font-size: 1rem;
+    color: var(--color-neutral-400);
+  }
+</style>

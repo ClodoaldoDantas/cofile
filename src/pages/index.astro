@@ -10,6 +10,7 @@ import StoreBadges from '@/components/StoreBadges.astro'
 import Partners from '@/components/Partners.astro'
 import Features from '@/components/Features.astro'
 import Testimonials from '@/components/Testimonials.astro'
+import CommonQuestions from '@/components/CommonQuestions.astro'
 
 import heroMobile from '@/assets/hero-mobile.png'
 import heroDesktop from '@/assets/hero-desktop.png'
@@ -23,6 +24,7 @@ import section8Desktop from '@/assets/section-8-desktop.png'
 import { partners } from '@/data/partners'
 import { features } from '@/data/features'
 import { testimonials } from '@/data/testimonials'
+import { faq } from '@/data/faq'
 ---
 
 <Layout title="Cofile" description="Check currency exchange rate in real time">
@@ -84,6 +86,8 @@ import { testimonials } from '@/data/testimonials'
   <Features features={features} />
 
   <Testimonials testimonials={testimonials} />
+
+  <CommonQuestions items={faq} />
 
   <Section>
     <SectionContent>
