@@ -1,12 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-interface Props {
-  src?: string
-  alt: string
-}
+type Props =
+  | {
+      src: string
+      alt: string
+    }
+  | {
+      src?: null
+      alt?: null
+    }
 
-const props = Astro.props
+const props = Astro.props as Props
 ---
 
 <div class="avatar">

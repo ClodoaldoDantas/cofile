@@ -1,4 +1,16 @@
-<button type="button">
+---
+import type { HTMLAttributes } from 'astro/types'
+import { Icon } from 'astro-icon/components'
+
+interface Props extends HTMLAttributes<'button'> {
+  icon?: string
+}
+
+const { icon, ...rest } = Astro.props as Props
+---
+
+<button type="button" {...rest}>
+  {icon && <Icon name={icon} size={24} aria-hidden="true" />}
   <slot />
 </button>
 
