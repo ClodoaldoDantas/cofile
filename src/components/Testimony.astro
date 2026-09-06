@@ -1,5 +1,6 @@
 ---
 import Text from '@/components/ui/Text.astro'
+import Avatar from '@/components/ui/Avatar.astro'
 
 export type ITestimony = {
   quote: string
@@ -18,11 +19,7 @@ const { data } = Astro.props
 ---
 
 <div class="testimony">
-  <img
-    src={data.author.image}
-    alt={`Photo of ${data.author.name}`}
-    class="testimony-image"
-  />
+  <Avatar src={data.author.image} alt={`Photo of ${data.author.name}`} />
 
   <div class="testimony-content">
     <span class="quotation-marks">“ ”</span>
@@ -48,13 +45,6 @@ const { data } = Astro.props
       flex-direction: column;
       align-items: flex-start;
     }
-  }
-
-  .testimony-image {
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-    object-fit: cover;
   }
 
   .testimony-content {
