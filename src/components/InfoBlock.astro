@@ -12,20 +12,20 @@ interface Props {
 const { icon, title, description } = Astro.props
 ---
 
-<div class="info-card">
+<div class="info-block">
   <Icon name={icon} size={48} aria-hidden="true" />
   <Heading title={title} level={3} />
   <Text text={description} />
 </div>
 
 <style>
-  .info-card {
+  .info-block {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .info-card > svg {
+  .info-block > svg {
     color: var(--color-primary);
     margin-bottom: 0.5rem;
   }
