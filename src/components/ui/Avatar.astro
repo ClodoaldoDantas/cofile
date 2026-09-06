@@ -2,8 +2,8 @@
 import { Icon } from 'astro-icon/components'
 
 interface Props {
-  src?: string
-  alt: string
+  src?: string | null
+  alt?: string | null
 }
 
 const props = Astro.props
@@ -14,7 +14,7 @@ const props = Astro.props
     props.src ? (
       <img
         src={props.src}
-        alt={props.alt}
+        alt={props.alt ?? ''}
         loading="lazy"
         height={96}
         width={96}

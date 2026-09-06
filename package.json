@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "storybook": "storybook dev",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
@@ -21,8 +23,11 @@
     "astro-icon": "^1.2.0"
   },
   "devDependencies": {
+    "@storybook-astro/framework": "^1.11.0",
+    "@storybook/builder-vite": "^10.6.0",
     "lefthook": "^2.1.10",
     "prettier": "3.9.6",
-    "prettier-plugin-astro": "0.14.1"
+    "prettier-plugin-astro": "0.14.1",
+    "storybook": "^10.6.0"
   }
 }
