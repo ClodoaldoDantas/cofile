@@ -39,6 +39,20 @@ pnpm preview  # visualiza o build de produção
 pnpm format   # formata os arquivos de ./src
 ```
 
+## Storybook
+
+O projeto usa [Storybook](https://storybook.js.org/) 10 com o framework [`@storybook-astro/framework`](https://github.com/storybook-astro/storybook-astro) para documentar e desenvolver componentes de forma isolada.
+
+As stories ficam em `src/stories/` e a configuração em `.storybook/`.
+
+Para iniciar o Storybook:
+
+```bash
+pnpm storybook
+```
+
+Abra [http://localhost:6006](http://localhost:6006) no navegador.
+
 ## Hooks de commit
 
 O projeto usa [Lefthook](https://github.com/evilmartians/lefthook) para rodar o Prettier automaticamente no `pre-commit`. Os arquivos em stage são formatados antes do commit.
