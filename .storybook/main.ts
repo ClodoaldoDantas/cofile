@@ -4,4 +4,5 @@ export default {
     name: '@storybook-astro/framework',
     options: {},
   },
+  addons: ['@storybook/addon-docs'],
 }
