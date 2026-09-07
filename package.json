@@ -11,7 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write ./src",
-    "storybook": "storybook dev"
+    "storybook": "storybook dev",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
@@ -19,12 +21,15 @@
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.16.0",
     "astro": "^7.2.0",
-    "astro-icon": "^1.2.0"
+    "astro-icon": "^1.2.0",
+    "dotenv": "^17.4.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@storybook-astro/framework": "^1.11.0",
     "@storybook/addon-docs": "^10.6.0",
     "@storybook/builder-vite": "^10.6.0",
+    "@types/node": "^26.4.1",
     "lefthook": "^2.1.10",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
