@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 
 dotenv.config({ path: './.env.test' })
 
+const baseURL = process.env.BASE_URL || 'http://localhost:4321'
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -11,12 +13,12 @@ export default defineConfig({
   // Fail the build on CI if you accidentally left test.only in the source code.
   forbidOnly: !!process.env.CI,
   use: {
-    baseURL: process.env.BASE_URL,
+    baseURL,
     headless: true,
   },
   webServer: {
     command: 'npm run dev',
-    url: process.env.BASE_URL,
+    url: baseURL,
     // Reuse existing server if available
     reuseExistingServer: !process.env.CI,
   },
