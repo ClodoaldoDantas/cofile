@@ -39,6 +39,44 @@ pnpm preview  # visualiza o build de produção
 pnpm format   # formata os arquivos de ./src
 ```
 
+## Content Collections
+
+O conteúdo dinâmico da landing page (features, FAQ e depoimentos) é gerenciado com [Content Collections](https://docs.astro.build/en/guides/content-collections/) do Astro, usando os [loaders de build time](https://docs.astro.build/en/guides/content-collections/#build-time-collection-loaders).
+
+As coleções são definidas em `src/content.config.ts` com o loader [`file()`](https://docs.astro.build/en/guides/content-collections/#the-file-loader), que carrega as entradas a partir de arquivos JSON locais em `src/content/` durante o build:
+
+```ts
+import { defineCollection } from 'astro:content'
+import { file } from 'astro/loaders'
+import { featureSchema } from './schemas'
+
+const features = defineCollection({
+  loader: file('src/content/features.json'),
+  schema: featureSchema,
+})
+
+export const collections = { features, faq, testimonials }
+```
+
+Cada coleção possui:
+
+- **Dados**: arquivo JSON em `src/content/` (`features.json`, `faq.json`, `testimonials.json`). Cada entrada é um objeto com um `id` único.
+- **Schema**: definido com [Zod](https://docs.astro.build/en/guides/content-collections/#defining-the-collection-schema) (via `astro/zod`) em `src/schemas/`, garantindo validação e tipagem TypeScript automática.
+
+Os dados são consultados com `getCollection()` do módulo `astro:content` em `src/pages/index.astro` e passados como props para os componentes:
+
+```astro
+---
+import { getCollection } from 'astro:content'
+
+const features = await getCollection('features')
+---
+
+<Features features={features} />
+```
+
+Dados estáticos que não são coleções (menu, parceiros, redes sociais) ficam em `src/constants/`.
+
 ## Storybook
 
 O projeto usa [Storybook](https://storybook.js.org/) 10 com o framework [`@storybook-astro/framework`](https://github.com/storybook-astro/storybook-astro) para documentar e desenvolver componentes de forma isolada.
