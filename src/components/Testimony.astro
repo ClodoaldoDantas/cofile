@@ -1,15 +1,7 @@
 ---
 import Text from '@/components/ui/Text.astro'
 import Avatar from '@/components/ui/Avatar.astro'
-
-export type ITestimony = {
-  quote: string
-  author: {
-    image: string
-    name: string
-    role: string
-  }
-}
+import type { ITestimony } from '@/schemas'
 
 interface Props {
   data: ITestimony

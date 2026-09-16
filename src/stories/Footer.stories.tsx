@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer.astro'
-import { menu } from '@/data/menu'
-import { socialMedia } from '@/data/social-media'
+import { menu } from '@/constants/menu'
+import { socialMedia } from '@/constants/social-media'
 
 export default {
   title: 'Layout/Footer',

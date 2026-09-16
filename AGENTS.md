@@ -59,7 +59,7 @@ pnpm exec playwright install --with-deps
 ---
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/header/Header.astro'
-import { menu } from '@/data/menu'
+import { menu } from '@/constants/menu'
 ---
 ```
 

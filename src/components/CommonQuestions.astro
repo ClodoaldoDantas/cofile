@@ -3,15 +3,21 @@ import { Icon } from 'astro-icon/components'
 import Container from '@/components/ui/Container.astro'
 import Heading from '@/components/ui/Heading.astro'
 import Accordion from '@/components/ui/Accordion.astro'
+import type { Question } from '@/schemas'
 
 interface Props {
-  items: {
-    title: string
-    content: string
+  faq: {
+    id: string
+    data: Question
   }[]
 }
 
-const { items } = Astro.props
+const { faq } = Astro.props
+
+const items = faq.map((question) => ({
+  title: question.data.title,
+  content: question.data.content,
+}))
 ---
 
 <section class="common-questions">

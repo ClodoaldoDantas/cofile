@@ -1,9 +1,13 @@
 ---
 import Container from '@/components/ui/Container.astro'
-import Testimony, { type ITestimony } from './Testimony.astro'
+import Testimony from './Testimony.astro'
+import type { ITestimony } from '@/schemas'
 
 interface Props {
-  testimonials: ITestimony[]
+  testimonials: {
+    id: string
+    data: ITestimony
+  }[]
 }
 
 const { testimonials } = Astro.props
@@ -11,7 +15,7 @@ const { testimonials } = Astro.props
 
 <section class="testimonials">
   <Container class="testimonials-container">
-    {testimonials.map((testimony) => <Testimony data={testimony} />)}
+    {testimonials.map((testimony) => <Testimony data={testimony.data} />)}
   </Container>
 </section>
 

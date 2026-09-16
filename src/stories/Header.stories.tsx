@@ -1,5 +1,5 @@
 import Header from '@/components/header/Header.astro'
-import { menu } from '@/data/menu'
+import { menu } from '@/constants/menu'
 
 export default {
   title: 'Layout/Header',

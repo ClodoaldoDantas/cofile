@@ -1,12 +1,12 @@
 ---
 import Container from '@/components/ui/Container.astro'
 import InfoBlock from '@/components/InfoBlock.astro'
+import type { Feature } from '@/schemas'
 
 interface Props {
   features: {
-    icon: string
-    title: string
-    description: string
+    id: string
+    data: Feature
   }[]
 }
 
@@ -18,9 +18,9 @@ const { features } = Astro.props
     {
       features.map((feature) => (
         <InfoBlock
-          icon={feature.icon}
-          title={feature.title}
-          description={feature.description}
+          icon={feature.data.icon}
+          title={feature.data.title}
+          description={feature.data.description}
         />
       ))
     }
