@@ -32,6 +32,25 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Testing (Playwright)
+
+E2E tests use [Playwright](https://playwright.dev). Test files live in `tests/` (e.g. `tests/faq.spec.ts`).
+
+```bash
+pnpm test       # run Playwright tests headlessly
+pnpm test:ui    # run tests in Playwright UI mode
+```
+
+On first setup, install the browsers:
+
+```bash
+pnpm exec playwright install --with-deps
+```
+
+- Configuration in `playwright.config.ts`:
+- CI runs via `.github/workflows/playwright.yml` on push/PR to `main`/`master`, installing browsers with `pnpm exec playwright install --with-deps` and uploading the `playwright-report/` artifact.
+- To generate new tests with the Playwright MCP, use the `playwright-generate-test` skill.
+
 ## Path Aliases
 
 `tsconfig.json` defines the alias `@/*` pointing to `./src/*`. Use it for all imports from `src`, e.g.:
@@ -48,37 +67,7 @@ import { menu } from '@/data/menu'
 
 - Plain CSS, no Tailwind or CSS-in-JS.
 - Global design tokens are defined in `src/styles/global.css`:
-  - Neutral colors: `--color-neutral-950`, `--color-neutral-50`, `--color-neutral-400`
-  - Primary: `--color-primary`, `--color-primary-hover`
-  - Black/white: `--color-black`, `--color-white`
-  - Font: `--font-epilogue`
 - Responsive breakpoint is mobile-first at `768px` (`width >= 768px` or `width < 768px`).
-
-## Fonts
-
-The project uses the **Epilogue** font family loaded through Astro's font provider:
-
-```js
-// astro.config.mjs
-fonts: [
-  {
-    provider: fontProviders.google(),
-    name: 'Epilogue',
-    cssVariable: '--font-epilogue',
-    weights: [400, 500, 600],
-    styles: ['normal'],
-    subsets: ['latin'],
-  },
-]
-```
-
-It is applied in `src/styles/global.css`:
-
-```css
-body {
-  font-family: var(--font-epilogue), system-ui, sans-serif;
-}
-```
 
 ## Formatting & Git Hooks
 
@@ -96,7 +85,6 @@ Alpine.js is enabled globally by the `@astrojs/alpinejs` integration. It is used
 - `src/components/header/HeaderMobileMenu.astro` shows/hides with `x-show`, `x-transition`, and `@click.outside`.
 
 Keep Alpine directives in Astro component markup when adding small interactions.
-
 Prefer native HTML elements for simple disclosures when possible. For example, the accordion in `src/components/ui/Accordion.astro` uses `<details>` and `<summary>` instead of Alpine.js.
 
 ## Images
