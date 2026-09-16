@@ -43,10 +43,6 @@ gh pr create --title "<title>" --body "$(cat <<'EOF'
 - [Main change 1]
 - [Main change 2]
 
-## Test Plan
-- [ ] [How to verify change 1]
-- [ ] [How to verify change 2]
-
 ## Notes
 [Any deployment or migration notes]
 EOF

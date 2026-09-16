@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content'
+
 import Layout from '@/layouts/Layout.astro'
 import Section from '@/components/ui/Section.astro'
 import SectionContent from '@/components/ui/SectionContent.astro'
@@ -21,10 +23,11 @@ import section4Desktop from '@/assets/section-4-desktop.png'
 import section8Mobile from '@/assets/section-8-mobile.png'
 import section8Desktop from '@/assets/section-8-desktop.png'
 
-import { partners } from '@/data/partners'
-import { features } from '@/data/features'
-import { testimonials } from '@/data/testimonials'
-import { faq } from '@/data/faq'
+import { partners } from '@/constants/partners'
+
+const features = await getCollection('features')
+const faq = await getCollection('faq')
+const testimonials = await getCollection('testimonials')
 ---
 
 <Layout title="Cofile" description="Check currency exchange rate in real time">
@@ -87,7 +90,7 @@ import { faq } from '@/data/faq'
 
   <Testimonials testimonials={testimonials} />
 
-  <CommonQuestions items={faq} />
+  <CommonQuestions faq={faq} />
 
   <Section>
     <SectionContent>
