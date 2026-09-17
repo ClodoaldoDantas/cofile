@@ -91,7 +91,6 @@ import { menu } from '@/constants/menu'
 ## Astro Documentation
 
 Full documentation: https://docs.astro.build
-
 Consult these guides before working on related tasks:
 
 - [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
