@@ -1,9 +1,6 @@
 import { defineConfig } from '@playwright/test'
-import dotenv from 'dotenv'
 
-dotenv.config({ path: './.env.test' })
-
-const baseURL = process.env.BASE_URL || 'http://localhost:4321'
+const baseURL = 'http://localhost:4321/cofile'
 
 export default defineConfig({
   testDir: './tests',

@@ -6,7 +6,7 @@ test.describe('Mobile navigation', () => {
   test.use({ viewport: { width: 375, height: 667 } })
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/cofile')
   })
 
   test('hides the mobile menu by default', async ({ page }) => {

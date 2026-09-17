@@ -22,8 +22,7 @@
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.16.0",
     "astro": "^7.2.0",
-    "astro-icon": "^1.2.0",
-    "dotenv": "^17.4.2"
+    "astro-icon": "^1.2.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

@@ -22,7 +22,7 @@ const faqItem = (page: Page, question: string) =>
 
 test.describe('FAQ section', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/cofile')
   })
 
   test('hides all answers by default', async ({ page }) => {
