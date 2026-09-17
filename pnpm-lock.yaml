@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      '@alpinejs/intersect':
+        specifier: ^3.17.3
+        version: 3.17.3
       '@astrojs/alpinejs':
         specifier: ^1.0.0
         version: 1.0.0(@types/alpinejs@3.13.11)(alpinejs@3.16.0)
@@ -41,6 +44,9 @@ importers:
       '@storybook/builder-vite':
         specifier: ^10.6.0
         version: 10.6.0(storybook@10.6.0(@types/react@19.2.18)(prettier@3.9.6)(react@19.2.8))(vite@8.2.1(@types/node@26.4.1)(esbuild@0.28.2))
+      '@types/alpinejs__intersect':
+        specifier: ^3.13.4
+        version: 3.13.4
       '@types/node':
         specifier: ^26.4.1
         version: 26.4.1
@@ -62,6 +68,12 @@ packages:
     resolution:
       {
         integrity: sha512-6OzddxPio9UiWTCemp4N8cYLV2ZN1ncRnV1cVGtve7dhPOtRkleRyx32GQCYSwDYgaHU3USMm84tNsvKzRCa1Q==,
+      }
+
+  '@alpinejs/intersect@3.17.3':
+    resolution:
+      {
+        integrity: sha512-uBlcZ5UnEPGVlGCdXHguPgwMiBZJqNA1vrIBvbP6qBjeYJx4nE4YlWQztXBTJgZbU5BtWKo9pGZbzvFOlX+T/Q==,
       }
 
   '@antfu/install-pkg@1.1.0':
@@ -1639,6 +1651,12 @@ packages:
     resolution:
       {
         integrity: sha512-3KhGkDixCPiLdL3Z/ok1GxHwLxEWqQOKJccgaQL01wc0EVM2tCTaqlC3NIedmxAXkVzt/V6VTM8qPgnOHKJ1MA==,
+      }
+
+  '@types/alpinejs__intersect@3.13.4':
+    resolution:
+      {
+        integrity: sha512-yoX6WO7AleeULOQvPz7rrx7FJmu6l033bM7QiGcWyvZjqF2KIut99ByUZO6OWUQuYmbRjxsKthGiUYNaAywHiA==,
       }
 
   '@types/aria-query@5.0.4':
@@ -3652,6 +3670,8 @@ packages:
 snapshots:
   '@adobe/css-tools@4.5.0': {}
 
+  '@alpinejs/intersect@3.17.3': {}
+
   '@antfu/install-pkg@1.1.0':
     dependencies:
       package-manager-detector: 1.8.0
@@ -4430,6 +4450,10 @@ snapshots:
     optional: true
 
   '@types/alpinejs@3.13.11': {}
+
+  '@types/alpinejs__intersect@3.13.4':
+    dependencies:
+      '@types/alpinejs': 3.13.11
 
   '@types/aria-query@5.0.4': {}
 
