@@ -5,6 +5,8 @@ import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://clodoaldodantas.github.io',
+  base: '/cofile',
   fonts: [
     {
       provider: fontProviders.google(),
@@ -15,6 +17,5 @@ export default defineConfig({
       subsets: ['latin'],
     },
   ],
-
   integrations: [alpinejs({ entrypoint: '/src/entrypoint' }), icon()],
 })

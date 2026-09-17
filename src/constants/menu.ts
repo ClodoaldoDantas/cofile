@@ -1,5 +1,5 @@
 export const menu = [
-  { label: 'Home', href: '/' },
-  { label: 'About us', href: '/' },
-  { label: 'Pricing', href: '/' },
+  { label: 'Home', href: '/cofile' },
+  { label: 'About us', href: '/cofile' },
+  { label: 'Pricing', href: '/cofile' },
 ]
