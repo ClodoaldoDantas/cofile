@@ -79,13 +79,9 @@ import { menu } from '@/constants/menu'
 
 ## Alpine.js Usage
 
-Alpine.js is enabled globally by the `@astrojs/alpinejs` integration. It is used sparingly for interactive UI:
-
-- `src/components/header/Header.astro` controls the mobile menu open state with `x-data`, `@click`, and `:aria-expanded`.
-- `src/components/header/HeaderMobileMenu.astro` shows/hides with `x-show`, `x-transition`, and `@click.outside`.
-
-Keep Alpine directives in Astro component markup when adding small interactions.
-Prefer native HTML elements for simple disclosures when possible. For example, the accordion in `src/components/ui/Accordion.astro` uses `<details>` and `<summary>` instead of Alpine.js.
+- Alpine.js is enabled globally by the `@astrojs/alpinejs` integration. It is used sparingly for interactive UI.
+- The `@alpinejs/intersect` plugin is registered in `src/entrypoint.ts` for scroll animations.
+- Keep Alpine directives in Astro component markup when adding small interactions.
 
 ## Images
 

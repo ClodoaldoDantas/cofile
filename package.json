@@ -16,6 +16,7 @@
     "test:ui": "playwright test --ui"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.17.3",
     "@astrojs/alpinejs": "^1.0.0",
     "@iconify-json/ph": "^1.2.2",
     "@types/alpinejs": "^3.13.11",
@@ -29,6 +30,7 @@
     "@storybook-astro/framework": "^1.11.0",
     "@storybook/addon-docs": "^10.6.0",
     "@storybook/builder-vite": "^10.6.0",
+    "@types/alpinejs__intersect": "^3.13.4",
     "@types/node": "^26.4.1",
     "lefthook": "^2.1.10",
     "prettier": "3.9.6",

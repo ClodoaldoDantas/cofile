@@ -7,7 +7,13 @@ interface Props extends HTMLAttributes<'section'> {}
 const { class: className, ...rest } = Astro.props
 ---
 
-<section class:list={['section', className]} {...rest}>
+<section
+  class:list={['section', 'reveal', className]}
+  x-data="{ shown: false }"
+  x-intersect.once="shown = true"
+  :class="{ 'is-visible': shown }"
+  {...rest}
+>
   <Container class="section-container">
     <slot />
   </Container>

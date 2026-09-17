@@ -16,5 +16,5 @@ export default defineConfig({
     },
   ],
 
-  integrations: [alpinejs(), icon()],
+  integrations: [alpinejs({ entrypoint: '/src/entrypoint' }), icon()],
 })

@@ -13,7 +13,12 @@ interface Props {
 const { features } = Astro.props
 ---
 
-<section class="features">
+<section
+  class="features reveal"
+  x-data="{ shown: false }"
+  x-intersect.once="shown = true"
+  :class="{ 'is-visible': shown }"
+>
   <Container class="features-container">
     {
       features.map((feature) => (

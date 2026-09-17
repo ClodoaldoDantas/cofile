@@ -12,7 +12,12 @@ interface Props {
 const { images } = Astro.props
 ---
 
-<section class="partners">
+<section
+  class="partners reveal"
+  x-data="{ shown: false }"
+  x-intersect.once="shown = true"
+  :class="{ 'is-visible': shown }"
+>
   <Container>
     <Heading title="Trusted by" level={3} />
 

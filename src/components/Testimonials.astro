@@ -13,7 +13,12 @@ interface Props {
 const { testimonials } = Astro.props
 ---
 
-<section class="testimonials">
+<section
+  class="testimonials reveal"
+  x-data="{ shown: false }"
+  x-intersect.once="shown = true"
+  :class="{ 'is-visible': shown }"
+>
   <Container class="testimonials-container">
     {testimonials.map((testimony) => <Testimony data={testimony.data} />)}
   </Container>

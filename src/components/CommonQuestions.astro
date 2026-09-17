@@ -20,7 +20,12 @@ const items = faq.map((question) => ({
 }))
 ---
 
-<section class="common-questions">
+<section
+  class="common-questions reveal"
+  x-data="{ shown: false }"
+  x-intersect.once="shown = true"
+  :class="{ 'is-visible': shown }"
+>
   <Container class="common-questions-container">
     <div class="common-questions-header">
       <Icon name="ph:seal-question" size={48} aria-hidden="true" />
