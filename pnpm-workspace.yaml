@@ -1,3 +1,8 @@
 allowBuilds:
   esbuild: true
   lefthook: true
+
+minimumReleaseAgeExclude:
+  - '@babel/helper-string-parser@7.29.11'
+  - '@babel/parser@7.29.11'
+  - '@babel/types@7.29.11'
