@@ -11,7 +11,7 @@ Landing page estática para o app Cofile, um aplicativo de consulta de taxas de 
 
 ## Pré-requisitos
 
-- Node.js >= 22.12.0
+- Node.js >= 24.22.1
 - pnpm
 
 ## Como rodar

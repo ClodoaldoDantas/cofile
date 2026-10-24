@@ -7,7 +7,7 @@ This document captures the current project setup, conventions, and commands agen
 **Cofile** is a static landing page built with [Astro](https://docs.astro.build). It is a single-page marketing site for a currency exchange rate app.
 
 - **Framework**: Astro `^7.2.0`
-- **Runtime**: Node.js `>=22.12.0`
+- **Runtime**: Node.js `>=24.22.1`
 - **Package manager**: pnpm
 - **Language**: TypeScript with Astro's strict config
 - **Reactivity**: [Alpine.js](https://alpinejs.dev/) via `@astrojs/alpinejs`
